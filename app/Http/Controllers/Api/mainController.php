@@ -12,6 +12,8 @@ class mainController extends Controller
     public function homePage(): \Illuminate\Http\JsonResponse
     {
 
+        dd('yes');
+
         $data = ['text' => 'Home Page'];
 
         return response()->json(successReturnData($data));

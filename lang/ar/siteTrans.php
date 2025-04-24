@@ -32,5 +32,7 @@ return [
     'show' => 'عرض',
     'back' => 'رجوع',
     'sent_successfully' => 'تم الارسال بنجاح',
+    'login_successfully' => 'تم تسجيل الدخول بنجاح',
+    'logout_successfully' => ' تم تسجيل الخروج بنجاح',
 
 ];

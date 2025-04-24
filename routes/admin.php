@@ -24,17 +24,17 @@ Route::group([
     'namespace' => 'App\Http\Controllers\Admin',
     'as' => 'admin.',
     'prefix' => 'admin',
-    //    'middleware' => ['admin-lang'],
+    'middleware' => ['admin-lang'],
 ], function () {
 
     /**** authentications */
     // login
-    Route::get('login', 'authController@showLoginForm')->name('show.login');
+    Route::get('login', 'authController@loginPage')->name('show.login');
     Route::post('login', 'authController@login')->name('login');
     // logout
     Route::get('logout', 'authController@logout')->name('logout');
 
-    Route::group(['middleware' => []], function () {
+    Route::group(['middleware' => ['admin']], function () {
 
         /* ------------ start Of Dashboard---------- */
         Route::get('/', [
