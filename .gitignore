@@ -1,0 +1,12 @@
+# Ignore environment config
+.env
+
+# Ignore server-specific files
+.htaccess
+error_log
+public/.htaccess
+
+# Ignore Composer-generated files (not recommended unless absolutely necessary)
+vendor/composer/autoload_classmap.php
+vendor/composer/autoload_static.php
+
