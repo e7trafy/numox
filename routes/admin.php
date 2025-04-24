@@ -32,7 +32,7 @@ Route::group([
     Route::get('login', 'authController@loginPage')->name('show.login');
     Route::post('login', 'authController@login')->name('login');
     // logout
-    Route::get('logout', 'authController@logout')->name('logout');
+    Route::post('logout', 'authController@logout')->name('logout');
 
     Route::group(['middleware' => ['admin']], function () {
 
