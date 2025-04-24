@@ -616,6 +616,8 @@ class ComposerStaticInit88970a0117c062eed55fa8728fc43833
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\apiLang' => __DIR__ . '/../..' . '/app/Http/Middleware/apiLang.php',
+        'App\\Http\\Requests\\Api\\BaseApiRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Api/BaseApiRequest.php',
+        'App\\Http\\Requests\\Api\\contactUsRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Api/contactUsRequest.php',
         'App\\Models\\Client' => __DIR__ . '/../..' . '/app/Models/Client.php',
         'App\\Models\\Content' => __DIR__ . '/../..' . '/app/Models/Content.php',
         'App\\Models\\Feature' => __DIR__ . '/../..' . '/app/Models/Feature.php',

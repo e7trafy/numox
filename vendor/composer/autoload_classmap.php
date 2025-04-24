@@ -17,6 +17,8 @@ return array(
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\apiLang' => $baseDir . '/app/Http/Middleware/apiLang.php',
+    'App\\Http\\Requests\\Api\\BaseApiRequest' => $baseDir . '/app/Http/Requests/Api/BaseApiRequest.php',
+    'App\\Http\\Requests\\Api\\contactUsRequest' => $baseDir . '/app/Http/Requests/Api/contactUsRequest.php',
     'App\\Models\\Client' => $baseDir . '/app/Models/Client.php',
     'App\\Models\\Content' => $baseDir . '/app/Models/Content.php',
     'App\\Models\\Feature' => $baseDir . '/app/Models/Feature.php',
