@@ -151,6 +151,15 @@ return [
         ],
     ],
 
-    'attributes' => [],
+    'attributes' => [
+        'page_id' => 'صفحة',
+        'client_name' => 'اسم العميل',
+        'type' => 'النوع',
+        'client_email' => 'البريد الإلكتروني',
+        'city' => 'المدينة',
+        'client_phone' => 'رقم الهاتف',
+        'content' => 'المحتوى',
+
+    ],
 
 ];

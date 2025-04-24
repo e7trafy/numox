@@ -78,7 +78,7 @@ class sourceSeeder extends Seeder
                 ],
             ]);
 
-            if (!empty($feature_ar[$key])) {
+            if (! empty($feature_ar[$key])) {
                 //                    'title', 'description', 'content',
                 foreach ($feature_ar[$key] as $key2 => $value2) {
 

@@ -34,7 +34,7 @@
         <label for="phone" class="form-label">{{__('siteTrans.phone')}}</label>
         <input type="text" class="form-control" id="phone"
                placeholder="{{__('siteTrans.enter')}}{{__('siteTrans.phone')}}"
-               value="{{isset($row) ? $row->phone : old('phone')}}"
+               value="{{isset($row) ? $row->client_phone : old('client_phone')}}"
                required>
         @include('dashboard.layouts.shared.validationStatus')
     </div>

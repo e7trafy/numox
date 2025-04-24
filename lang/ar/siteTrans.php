@@ -31,5 +31,6 @@ return [
     'view' => 'عرض',
     'show' => 'عرض',
     'back' => 'رجوع',
+    'sent_successfully' => 'تم الارسال بنجاح',
 
 ];

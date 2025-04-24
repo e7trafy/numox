@@ -31,5 +31,6 @@ return [
     'view' => 'View',
     'show' => 'Show',
     'back' => 'Back',
+    'sent_successfully' => 'Sent Successfully',
 
 ];

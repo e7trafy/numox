@@ -15,7 +15,7 @@ class contactUs extends Model
     public $translatable = ['title', 'description'];
 
     protected $fillable = [
-        'page_id', 'title', 'description', 'image', 'client_name', 'client_email', 'city', 'client_phone', 'company', 'status', 'type', 'content', 'extra_data',
+        'page_id', 'name', 'title', 'description', 'image', 'client_name', 'client_email', 'city', 'client_phone', 'company', 'status', 'type', 'content', 'extra_data',
     ];
 
     protected $casts = [

@@ -14,5 +14,14 @@
 <!-- App js -->
 <script src="{{dashboardPath()}}/js/app.js"></script>
 
+
+<script>
+    // show pages disabled inputs
+    $('.show-page input').attr('disabled', true)
+    $('.show-page textarea').attr('disabled', true)
+    $('.show-page select').attr('disabled', true)
+</script>
+
+
 <!-- Stack for page-specific scripts -->
 @stack('scripts')

@@ -192,6 +192,15 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'page_id' => 'Page',
+        'client_name' => 'Client Name',
+        'type' => 'Type',
+        'client_email' => 'Client Email',
+        'city' => 'City',
+        'client_phone' => 'Client Phone',
+        'content' => 'Content',
+
+    ],
 
 ];
