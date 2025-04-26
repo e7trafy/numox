@@ -42,9 +42,11 @@
                             @include('dashboard.contactUs.form')
 
 
-                            <button class="btn btn-warning" type="button" onclick="window.history.back()">
-                                {{__('siteTrans.back')}}
+                            <button class="btn btn-warning" type="button"
+                                    onclick="window.location.replace(document.referrer)">
+                                {{ __('siteTrans.back') }}
                             </button>
+
 
                         </form>
                     </div>

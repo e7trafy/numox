@@ -21,6 +21,7 @@ return [
     'enter' => 'أدخل ',
     'company' => 'الشركة',
     'client_phone' => 'رقم الهاتف',
+    'content' => 'المحتوى',
 
     'action' => 'إجراء',
     'create' => 'انشاء',

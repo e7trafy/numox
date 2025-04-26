@@ -73,7 +73,7 @@
 <!------------------------------ // content //------------------------------------------>
 <div class="col-md-12">
     <div class="mb-1">
-        <label for="validationTextarea" class="form-label">Textarea</label>
+        <label for="validationTextarea" class="form-label">{{__('siteTrans.content')}}</label>
         <textarea class="form-control" id="validationTextarea" placeholder="Required example textarea"
                   required>
             {{isset($row) ? $row->content : old('content')}}
