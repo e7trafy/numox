@@ -37,5 +37,7 @@ class pagesTableSeeder extends Seeder
         $this->call(fqsSeeder::class);
         $this->call(systemUnitSeeder::class);
         $this->call(sourceSeeder::class);
+        $this->call(aboutUsSeeder::class);
+        $this->call(SettingsTableSeeder::class);
     }
 }

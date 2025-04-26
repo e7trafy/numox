@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\UploadTrait;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
 
 class Source extends Model
 {
-    use HasTranslations;
+    use HasTranslations, UploadTrait;
 
     public const IMAGEPATH = 'pages';
 

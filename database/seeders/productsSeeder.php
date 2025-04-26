@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Content;
 use App\Models\Page;
 use App\Models\Product;
 use Illuminate\Database\Seeder;
@@ -10,6 +11,64 @@ class productsSeeder extends Seeder
 {
     public function run()
     {
+
+        $title_ar = 'نومو إدريو أكس: التقنية الذكية التي تعيد تعريف تجربة التعليم والتدريس';
+        $title_en = 'Nomo Edu X: Smart Technology That Redefines Teaching and Learning Experience';
+
+        $desc_ar = 'نظام نومو إدريو أكس هو منصة متكاملة تهدف إلى تحويل بيئة التعليم إلى تجربة ذكية وسلسة من خلال أحدث التقنيات. يوفر النظام حلولاً رقمية متقدمة تتيح للمؤسسات التعليمية تحسين الأداء الأكاديمي، تسهيل العمليات الإدارية، وتعزيز تجربة التعلم للطلاب والمعلمين على حد سواء.
+
+تم تصميم نظام نومو إدريو أكس ليكون أداة قوية تلبي احتياجات المدارس والجامعات والمعاهد التعليمية، حيث يوفر مجموعة متكاملة من الأدوات التي تضمن سهولة إدارة الجداول الدراسية، الدورات، التقييمات، وإصدار الشهادات بطريقة آمنة، بالإضافة إلى ذلك، يعزز النظام التواصل بين الطلاب وأعضاء هيئة التدريس من خلال دعم الذكاء الاصطناعي في تقديم المساعدة والدعم الفوري.';
+
+        $desc_en = 'Nomo Edu X is an integrated system that transforms educational environments into smart and seamless experiences using cutting-edge technology. The system provides advanced digital solutions that enable educational institutions to improve academic performance, streamline administrative processes, and enhance learning experiences for both students and teachers.
+
+Designed as a powerful tool for schools, universities, and educational institutes, Nomo Edu X offers a comprehensive suite of features for easy management of schedules, courses, assessments, and secure certificate issuance. Additionally, the system enhances communication between students and faculty through AI-powered assistance and instant support.';
+
+        $features_ar = [
+            'تسهيل إدارة المناهج والبرامج الدراسية من خلال منصة متكاملة تساعد المسؤولين في التخطيط الأكاديمي',
+            'تحسين تجربة التعلم للطلاب عبر أدوات تفاعلية متقدمة تعزز من استيعابهم للمحتوى التعليمي',
+            'دعم اتخاذ القرار القائم على البيانات من خلال تحليلات دقيقة تقدم رؤية واضحة حول أداء الطلاب والمعلمين'
+        ];
+
+        $features_en = [
+            'Simplified curriculum and program management through an integrated platform that assists administrators in academic planning',
+            'Enhanced student learning experience through advanced interactive tools that improve content comprehension',
+            'Data-driven decision support through precise analytics that provide clear insights into student and teacher performance'
+        ];
+
+        $content = Content::create([
+            'page_id' => Page::products,
+            'name' => [
+                'ar' => $title_ar,
+                'en' => $title_en,
+            ],
+            'title' => [
+                'ar' => $title_ar,
+                'en' => $title_en,
+            ],
+            'description' => [
+                'ar' => $desc_ar,
+                'en' => $desc_en,
+            ],
+            'content' => [
+                'ar' => $desc_ar,
+                'en' => $desc_en,
+            ],
+        ]);
+
+        foreach ($features_ar as $key => $value) {
+            $content->features()->create([
+                'title' => [
+                    'ar' => $value,
+                    'en' => $features_en[$key],
+                ],
+                'description' => [
+                    'ar' => $value,
+                    'en' => $features_en[$key],
+                ],
+            ]);
+
+        }
+
         // First in home page اهم مميزات النظام ف الرئيسيه && product Page
         $products = [
             [

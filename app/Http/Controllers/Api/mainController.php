@@ -4,17 +4,85 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\contactUsRequest;
+use App\Http\Resources\site\pages\aboutUsPageResource;
+use App\Http\Resources\site\pages\homePageResource;
+use App\Http\Resources\site\pages\partnersPageResource;
+use App\Http\Resources\site\pages\pricingPageResource;
+use App\Http\Resources\site\pages\productsPageResource;
+use App\Http\Resources\site\pages\sourcePageResource;
+use App\Http\Resources\site\sections\contentResource;
+use App\Models\Client;
 use App\Models\contactUs;
+use App\Models\Content;
+use App\Models\Page;
+use App\Models\Setting;
 
 class mainController extends Controller
 {
     /************ // homePage // **************/
     public function homePage(): \Illuminate\Http\JsonResponse
     {
+        $page = Page::whereSlug('home')->first();
+        $data = new homePageResource($page);
 
-        dd('yes');
+        return response()->json(successReturnData($data));
+    }
 
-        $data = ['text' => 'Home Page'];
+    /************ // productsPage // **************/
+    public function productsPage(): \Illuminate\Http\JsonResponse
+    {
+        $page = Page::whereSlug('products')->first();
+        $data = new productsPageResource($page);
+
+        return response()->json(successReturnData($data));
+    }
+
+    /************ // partnersPage // **************/
+    public function partnersPage(): \Illuminate\Http\JsonResponse
+    {
+        $page = Page::whereSlug('partners')->first();
+        $data = new partnersPageResource($page);
+
+        return response()->json(successReturnData($data));
+    }
+
+    /************ // pricingPage // **************/
+    public function pricingPage(): \Illuminate\Http\JsonResponse
+    {
+        $page = Page::whereSlug('pricing')->first();
+        $data = new pricingPageResource($page);
+
+        return response()->json(successReturnData($data));
+    }
+
+    /************ // sourcePage // **************/
+    public function sourcePage(): \Illuminate\Http\JsonResponse
+    {
+        $page = Page::whereSlug('pricing')->first();
+        $data = new sourcePageResource($page);
+
+        return response()->json(successReturnData($data));
+    }
+
+    /************ // aboutUsPage // **************/
+    public function aboutUsPage(): \Illuminate\Http\JsonResponse
+    {
+        $page = Page::whereSlug('aboutUs')->first();
+        $data = new aboutUsPageResource($page);
+
+        return response()->json(successReturnData($data));
+    }
+
+    public function settings(): \Illuminate\Http\JsonResponse
+    {
+        $data = [
+            'FACEBOOK_URL' => SETTING_VALUE('FACEBOOK_URL'),
+            'TWITTER_URL' => SETTING_VALUE('TWITTER_URL'),
+            'INSTAGRAM_URL' => SETTING_VALUE('INSTAGRAM_URL'),
+            'SNAPCHAT_URL' => SETTING_VALUE('SNAPCHAT_URL'),
+            'FORMAL_EMAIL' => SETTING_VALUE('FORMAL_EMAIL'),
+            'address' => SETTING_VALUE('address'),
+        ];
 
         return response()->json(successReturnData($data));
     }
