@@ -75,7 +75,9 @@
     <div class="mb-1">
         <label for="validationTextarea" class="form-label">Textarea</label>
         <textarea class="form-control" id="validationTextarea" placeholder="Required example textarea"
-                  required></textarea>
+                  required>
+            {{isset($row) ? $row->content : old('content')}}
+        </textarea>
         @include('dashboard.layouts.shared.validationStatus')
     </div>
 </div>
