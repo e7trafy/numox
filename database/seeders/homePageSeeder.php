@@ -28,7 +28,7 @@ class homePageSeeder extends Seeder
                 'en' => 'An integrated system designed to support Nomo Edu X educational institutions and elevate them through advanced technological solutions. It combines smart academic management and innovative e-learning,
                 contributing to the improvement of educational process efficiency and delivering a comprehensive experience for educational institutions, families, and learners.',
             ],
-            'image' => 'home-first-section.jpg',
+            'image' => 'about_video.mp4',
             'extra_data' => [
                 'order' => 1,
             ],

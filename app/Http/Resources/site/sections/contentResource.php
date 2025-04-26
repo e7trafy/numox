@@ -37,6 +37,7 @@ class contentResource extends JsonResource
                 'en' => $this->getTranslation('content', 'en'),
             ],
 
+            'image' => $this->image,
             'extra_data' => $this->extra_data,
 
             'features' => featureResource::collection($this->features),

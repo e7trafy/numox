@@ -67,13 +67,18 @@ class generalSeeder extends Seeder
 
         // Start: Clients
         $name_ar = [
-            'المركز الوطني للتعلم الإلكتروني', 'المفتاحان التجارية', 'FILMFINITEZ', 'JADEER - إدارة الشخصية', 'JADEER - إدارة التطبيقات', 'HyperPay - إدارة التصنيف', 'JADEER - إدارة التطبيقات', 'FILMFINITEZ', 'Caravan',
-            'إدارة الشخصية', 'إدارة التطبيقات', 'إدارة التصنيف', 'العملية والتحقيق والتموين', 'الموضوعية والتعامل بالتأكد الدولي', 'التنمية المستهدفة', 'مجالات الجهاز المالية',
+            'بنك الرياض', 'المركز الوطنى للتعليم الالكترونى', 'الكليه التطبيقيه', 'Jadeer', 'الجمعيه التعاونيه', 'المنار', 'Jadeer', 'الجمعيه التعاونيه', 'المنار',
+            'Jadeer', 'الجمعيه التعاونيه', 'هايبر باى', 'فكره و ذكرى', 'velen', 'ملتقى جده', 'الملتقى العقاريه'
         ];
 
         $name_en = [
-            'National E-Learning Center', 'Commercial Keys', 'FILMFINITEZ', 'JADEER - Personality Management', 'JADEER - Applications Management', 'HyperPay - Classification Management', 'JADEER - Applications Management', 'FILMFINITEZ', 'Caravan',
-            'Personality Management', 'Applications Management', 'Classification Management', 'Operations, Investigation and Supply', 'Objectivity and International Verification Dealings', 'Targeted Development', 'Financial Device Fields',
+            'Bank of Riyadh', 'National Center for Electronic Education', 'Applied College', 'Jadeer', 'Cooperative Community', 'Manar', 'Jadeer', 'Cooperative Community', 'Manar',
+            'Jadeer', 'Cooperative Community', 'Hyper Bay', 'Ideas and Memories', 'velen', 'Judea Conference', 'Apartment Conference'
+        ];
+
+        $name_en_img = [
+            'Bank_of_Riyadh', 'National_Center_for_Electronic_Education', 'Applied_College', 'Jadeer', 'Cooperative_Community',
+            'Manar', 'Jadeer', 'Cooperative_Community', 'Manar', 'Jadeer', 'Cooperative_Community', 'Hyper_Bay', 'Ideas_and_Memories', 'velen', 'Judea_Conference', 'Apartment_Conference'
         ];
         foreach ($name_ar as $key => $value) {
             Client::create([
@@ -85,6 +90,7 @@ class generalSeeder extends Seeder
                     'ar' => $value,
                     'en' => $name_en[$key],
                 ],
+                'image' => $name_en_img[$key] . '.png'
             ]);
         }
 
@@ -95,6 +101,10 @@ class generalSeeder extends Seeder
 
         $name_en = [
             'ORACLE', 'Vocational Training Corporation', 'Ministry of Education', 'National Laboratory Center',
+        ];
+
+        $name_en_imgs = [
+            'ORACLE', 'Vocational_Training_Corporation', 'Ministry_of_Education', 'National_Laboratory_Center',
         ];
 
         foreach ($name_ar as $key => $value) {
@@ -108,7 +118,7 @@ class generalSeeder extends Seeder
                     'ar' => $value,
                     'en' => $name_en[$key],
                 ],
-                'image' => 'partner'.($key + 1).'.png',
+                'image' => $name_en_imgs[$key] . '.png',
             ]);
         }
 

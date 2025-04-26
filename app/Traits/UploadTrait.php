@@ -8,13 +8,23 @@ use Illuminate\Support\Facades\Storage;
 
 trait UploadTrait
 {
+    public static function defaultImage()
+    {
+        return 'https://www.contentviewspro.com/wp-content/uploads/2017/07/default_image.png';
+    }
+
+    public static function defaultPersonImage()
+    {
+        return 'https://vectorified.com/images/default-user-icon-33.jpg';
+    }
+
     public function uploadAllTypesSized($file, $directory)
     {
 
         // create image manager with desired driver
         $manager = new ImageManager(new Driver);
 
-        $name = time().'_'.rand(1111, 9999).'.'.$file->getClientOriginalExtension();
+        $name = time() . '_' . rand(1111, 9999) . '.' . $file->getClientOriginalExtension();
 
         // read image from file system
         $image = $manager->read($file);
@@ -22,52 +32,12 @@ trait UploadTrait
         // resize image proportionally to 300px width
         $image->resize(300, 350);
 
-        $path = 'public/images/'.$directory;
+        $path = 'public/' . $directory;
 
         // save modified image in new format
-        $image->toPng()->save($path.'/'.$name);
+        $image->toPng()->save($path . '/' . $name);
 
-        return (string) $name;
-    }
-
-    public function getImageCPanel($name, $directory)
-    {
-        return url('storage/images/'.$directory.'/'.$name);
-    }
-
-    public function getImageS3($name, $directory)
-    {
-        return $name;
-    }
-
-    public function uploadAllTypesCPanel($file, $directory)
-    {
-
-        if (! File::isDirectory('storage/images/'.$directory)) {
-            File::makeDirectory('storage/images/'.$directory, 0777, true, true);
-        }
-
-        $destinationPath = \public_path('storage/images/'.$directory);
-        $fileName = time().'.'.$file->clientExtension();
-        $file->move($destinationPath, $fileName);
-
-        return $fileName;
-    }
-
-    public function uploadAllTypesS3($file, $directory)
-    {
-
-        // Generate a unique filename
-        $filename = rand(10000, 99999).'_'.$file->getClientOriginalName();
-        //        $filename = time() . '_' . rand(111, 999);
-
-        // Store the image on S3
-        $path = $file->storeAs('images/'.$directory, $filename, 's3');
-
-        // Get the URL of the uploaded file
-        $url = Storage::disk('s3')->url($path);
-
-        return $url;
+        return (string)$name;
     }
 
     public function uploadAllTypes($file, $directory)
@@ -80,6 +50,32 @@ trait UploadTrait
         }
     }
 
+    public function uploadAllTypesCPanel($file, $directory)
+    {
+
+        $destinationPath = \public_path('storage/' . $directory);
+        $fileName = time() . '.' . $file->clientExtension();
+        $file->move($destinationPath, $fileName);
+
+        return $fileName;
+    }
+
+    public function uploadAllTypesS3($file, $directory)
+    {
+
+        // Generate a unique filename
+        $filename = rand(10000, 99999) . '_' . $file->getClientOriginalName();
+        //        $filename = time() . '_' . rand(111, 999);
+
+        // Store the image on S3
+        $path = $file->storeAs($directory, $filename, 's3');
+
+        // Get the URL of the uploaded file
+        $url = Storage::disk('s3')->url($path);
+
+        return $url;
+    }
+
     public function getImage($name, $directory)
     {
         if (Request::getHost() == '127.0.0.1') {
@@ -89,13 +85,13 @@ trait UploadTrait
         }
     }
 
-    public static function defaultImage()
+    public function getImageCPanel($name, $directory)
     {
-        return 'https://www.contentviewspro.com/wp-content/uploads/2017/07/default_image.png';
+        return url('storage/' . $directory . '/' . $name);
     }
 
-    public static function defaultPersonImage()
+    public function getImageS3($name, $directory)
     {
-        return 'https://vectorified.com/images/default-user-icon-33.jpg';
+        return $name;
     }
 }
