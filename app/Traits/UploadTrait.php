@@ -42,12 +42,7 @@ trait UploadTrait
 
     public function uploadAllTypes($file, $directory)
     {
-        // dd(Request::getHost());
-        if (Request::getHost() == '127.0.0.1' || Request::getHost() == 'localhost') {
-            return $this->uploadAllTypesCPanel($file, $directory);
-        } else {
-            return $this->uploadAllTypesS3($file, $directory);
-        }
+        return $this->uploadAllTypesCPanel($file, $directory);
     }
 
     public function uploadAllTypesCPanel($file, $directory)
@@ -78,11 +73,7 @@ trait UploadTrait
 
     public function getImage($name, $directory)
     {
-        if (Request::getHost() == '127.0.0.1') {
-            return $this->getImageCPanel($name, $directory);
-        } else {
-            return $this->getImageS3($name, $directory);
-        }
+        return $this->getImageCPanel($name, $directory);
     }
 
     public function getImageCPanel($name, $directory)
