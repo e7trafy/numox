@@ -1,12 +1,35 @@
-# Ignore environment config
+# Ignore environment configuration
 .env
+.env.*
 
-# Ignore server-specific files
+# Ignore Laravel/Framework cache
+/vendor
+/node_modules
+/storage/*.key
+/storage/*.log
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/logs/*
+
+# Ignore database and IDE stuff
+/.idea
+*.sqlite
+*.sqlite3
+*.sql
+*.bak
+.DS_Store
+Thumbs.db
+
+# Ignore server files
 .htaccess
-error_log
 public/.htaccess
+error_log
 
-# Ignore Composer-generated files (not recommended unless absolutely necessary)
-vendor/composer/autoload_classmap.php
-vendor/composer/autoload_static.php
+# Ignore system files
+*.log
+*.tmp
 
+# Ignore Composer's generated files (optional)
+/vendor/composer/autoload_classmap.php
+/vendor/composer/autoload_static.php
