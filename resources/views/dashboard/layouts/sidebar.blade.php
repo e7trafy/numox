@@ -45,7 +45,8 @@
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarDashboards" data-bs-toggle="collapse" role="button"
                        aria-expanded="false" aria-controls="sidebarDashboards">
-                        <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Dashboards</span>
+                        <i class="ri-dashboard-2-line"></i> <span
+                            data-key="t-dashboards">{{__('siteTrans.pages')}}</span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarDashboards">
                         <ul class="nav nav-sm flex-column">
@@ -56,14 +57,6 @@
                         </ul>
                     </div>
                 </li> <!-- end Dashboard Menu -->
-
-                <!---------------- // sectionsContent // ---------------->
-                <li class="nav-item">
-                    <a class="nav-link menu-link" href="{{route('admin.sectionsContent.index')}}">
-                        <i class="ri-honour-line"></i> <span
-                            data-key="t-widgets"> {{__('siteTrans.sectionsContent')}} </span>
-                    </a>
-                </li>
 
                 <!---------------- // products // ---------------->
                 <li class="nav-item">
