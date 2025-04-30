@@ -10,12 +10,8 @@ use App\Http\Resources\site\pages\partnersPageResource;
 use App\Http\Resources\site\pages\pricingPageResource;
 use App\Http\Resources\site\pages\productsPageResource;
 use App\Http\Resources\site\pages\sourcePageResource;
-use App\Http\Resources\site\sections\contentResource;
-use App\Models\Client;
 use App\Models\contactUs;
-use App\Models\Content;
 use App\Models\Page;
-use App\Models\Setting;
 
 class mainController extends Controller
 {

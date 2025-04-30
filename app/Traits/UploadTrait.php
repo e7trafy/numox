@@ -3,7 +3,6 @@
 namespace App\Traits;
 
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Storage;
 
 trait UploadTrait
@@ -24,7 +23,7 @@ trait UploadTrait
         // create image manager with desired driver
         $manager = new ImageManager(new Driver);
 
-        $name = time() . '_' . rand(1111, 9999) . '.' . $file->getClientOriginalExtension();
+        $name = time().'_'.rand(1111, 9999).'.'.$file->getClientOriginalExtension();
 
         // read image from file system
         $image = $manager->read($file);
@@ -32,12 +31,12 @@ trait UploadTrait
         // resize image proportionally to 300px width
         $image->resize(300, 350);
 
-        $path = 'public/' . $directory;
+        $path = 'public/'.$directory;
 
         // save modified image in new format
-        $image->toPng()->save($path . '/' . $name);
+        $image->toPng()->save($path.'/'.$name);
 
-        return (string)$name;
+        return (string) $name;
     }
 
     public function uploadAllTypes($file, $directory)
@@ -48,8 +47,8 @@ trait UploadTrait
     public function uploadAllTypesCPanel($file, $directory)
     {
 
-        $destinationPath = \public_path('storage/' . $directory);
-        $fileName = time() . '.' . $file->clientExtension();
+        $destinationPath = \public_path('storage/'.$directory);
+        $fileName = time().'.'.$file->clientExtension();
         $file->move($destinationPath, $fileName);
 
         return $fileName;
@@ -59,7 +58,7 @@ trait UploadTrait
     {
 
         // Generate a unique filename
-        $filename = rand(10000, 99999) . '_' . $file->getClientOriginalName();
+        $filename = rand(10000, 99999).'_'.$file->getClientOriginalName();
         //        $filename = time() . '_' . rand(111, 999);
 
         // Store the image on S3
@@ -78,7 +77,7 @@ trait UploadTrait
 
     public function getImageCPanel($name, $directory)
     {
-        return url('storage/' . $directory . '/' . $name);
+        return url('storage/'.$directory.'/'.$name);
     }
 
     public function getImageS3($name, $directory)

@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('site.home_page');
+    return redirect()->route('admin.dashboard.homePage');
 });
 
 Route::get('/scend-page', function () {

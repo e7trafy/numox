@@ -36,7 +36,7 @@ class sourcePageResource extends JsonResource
             'clients' => partnerResource::collection($clients),
 
             'partners' => partnerResource::collection($partners),
-            
+
         ];
     }
 }

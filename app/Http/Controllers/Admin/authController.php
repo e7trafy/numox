@@ -37,7 +37,6 @@ class authController extends Controller
             ->with('error', 'خطأ فى بيانات الدخول');
     }
 
-
     public function logout()
     {
         auth()->logout();
@@ -46,5 +45,4 @@ class authController extends Controller
 
         return redirect(route('admin.login'))->with('success', __('siteTrans.logout_successfully'));
     }
-
 }

@@ -20,6 +20,7 @@ class Setting extends Model
     public function logo($value)
     {
         $name = $this->uploadAllTypes($value, static::IMAGEPATH);
+
         return $name;
     }
 

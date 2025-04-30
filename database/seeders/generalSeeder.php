@@ -68,17 +68,17 @@ class generalSeeder extends Seeder
         // Start: Clients
         $name_ar = [
             'بنك الرياض', 'المركز الوطنى للتعليم الالكترونى', 'الكليه التطبيقيه', 'Jadeer', 'الجمعيه التعاونيه', 'المنار', 'Jadeer', 'الجمعيه التعاونيه', 'المنار',
-            'Jadeer', 'الجمعيه التعاونيه', 'هايبر باى', 'فكره و ذكرى', 'velen', 'ملتقى جده', 'الملتقى العقاريه'
+            'Jadeer', 'الجمعيه التعاونيه', 'هايبر باى', 'فكره و ذكرى', 'velen', 'ملتقى جده', 'الملتقى العقاريه',
         ];
 
         $name_en = [
             'Bank of Riyadh', 'National Center for Electronic Education', 'Applied College', 'Jadeer', 'Cooperative Community', 'Manar', 'Jadeer', 'Cooperative Community', 'Manar',
-            'Jadeer', 'Cooperative Community', 'Hyper Bay', 'Ideas and Memories', 'velen', 'Judea Conference', 'Apartment Conference'
+            'Jadeer', 'Cooperative Community', 'Hyper Bay', 'Ideas and Memories', 'velen', 'Judea Conference', 'Apartment Conference',
         ];
 
         $name_en_img = [
             'Bank_of_Riyadh', 'National_Center_for_Electronic_Education', 'Applied_College', 'Jadeer', 'Cooperative_Community',
-            'Manar', 'Jadeer', 'Cooperative_Community', 'Manar', 'Jadeer', 'Cooperative_Community', 'Hyper_Bay', 'Ideas_and_Memories', 'velen', 'Judea_Conference', 'Apartment_Conference'
+            'Manar', 'Jadeer', 'Cooperative_Community', 'Manar', 'Jadeer', 'Cooperative_Community', 'Hyper_Bay', 'Ideas_and_Memories', 'velen', 'Judea_Conference', 'Apartment_Conference',
         ];
         foreach ($name_ar as $key => $value) {
             Client::create([
@@ -90,7 +90,7 @@ class generalSeeder extends Seeder
                     'ar' => $value,
                     'en' => $name_en[$key],
                 ],
-                'image' => $name_en_img[$key] . '.png'
+                'image' => $name_en_img[$key].'.png',
             ]);
         }
 
@@ -118,7 +118,7 @@ class generalSeeder extends Seeder
                     'ar' => $value,
                     'en' => $name_en[$key],
                 ],
-                'image' => $name_en_imgs[$key] . '.png',
+                'image' => $name_en_imgs[$key].'.png',
             ]);
         }
 

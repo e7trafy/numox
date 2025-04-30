@@ -5,16 +5,19 @@
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description"/>
     <meta content="Themesbrand" name="author"/>
 
+    <meta name="csrf-token" content="{{ csrf_token() }}"/>
+
+
     <!-- App favicon -->
-    <img src="{{dashboardPath()}}/images/logo-sm.png" style="border-radius: 50%; width: 50px; height: 50px;" alt="Logo">
+    <link rel="shortcut icon" href="{{dashboardPath()}}/images/favicon.ico">
 
     <!-- Core CSS (loaded for all pages) -->
-    <script src="{{dashboardPath()}}/js/layout.js"></script>
-    <link href="{{dashboardPath()}}/css/bootstrap-rtl.min.css" rel="stylesheet" type="text/css"/>
-    <link href="{{dashboardPath()}}/css/icons.min.css" rel="stylesheet" type="text/css"/>
-    <link href="{{dashboardPath()}}/css/app-rtl.min.css" rel="stylesheet" type="text/css"/>
-    <link href="{{dashboardPath()}}/css/custom-rtl.min.css" rel="stylesheet" type="text/css"/>
-
+    <script src="{{ dashboardPath()}}/js/layout.js"></script>
+    <link href="{{ dashboardPath()}}/css/bootstrap-rtl.min.css" rel="stylesheet" type="text/css"/>
+    <link href="{{ dashboardPath()}}/css/icons.min.css" rel="stylesheet" type="text/css"/>
+    <link href="{{ dashboardPath()}}/css/app-rtl.min.css" rel="stylesheet" type="text/css"/>
+    <link href="{{ dashboardPath()}}/css/custom-rtl.min.css" rel="stylesheet" type="text/css"/>
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
     <style>

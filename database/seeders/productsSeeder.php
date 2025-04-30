@@ -26,13 +26,13 @@ Designed as a powerful tool for schools, universities, and educational institute
         $features_ar = [
             'تسهيل إدارة المناهج والبرامج الدراسية من خلال منصة متكاملة تساعد المسؤولين في التخطيط الأكاديمي',
             'تحسين تجربة التعلم للطلاب عبر أدوات تفاعلية متقدمة تعزز من استيعابهم للمحتوى التعليمي',
-            'دعم اتخاذ القرار القائم على البيانات من خلال تحليلات دقيقة تقدم رؤية واضحة حول أداء الطلاب والمعلمين'
+            'دعم اتخاذ القرار القائم على البيانات من خلال تحليلات دقيقة تقدم رؤية واضحة حول أداء الطلاب والمعلمين',
         ];
 
         $features_en = [
             'Simplified curriculum and program management through an integrated platform that assists administrators in academic planning',
             'Enhanced student learning experience through advanced interactive tools that improve content comprehension',
-            'Data-driven decision support through precise analytics that provide clear insights into student and teacher performance'
+            'Data-driven decision support through precise analytics that provide clear insights into student and teacher performance',
         ];
 
         $content = Content::create([

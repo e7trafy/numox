@@ -18,7 +18,6 @@ class sourceResource extends JsonResource
                 'en' => $this->getTranslation('name', 'en'),
             ],
 
-
             'title' => [
                 'title' => $this->title,
                 'ar' => $this->getTranslation('title', 'ar'),
@@ -30,7 +29,6 @@ class sourceResource extends JsonResource
                 'ar' => $this->getTranslation('description', 'ar'),
                 'en' => $this->getTranslation('description', 'en'),
             ],
-
 
             'image' => $this->image,
 

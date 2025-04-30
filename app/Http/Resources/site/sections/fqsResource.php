@@ -9,7 +9,6 @@ class fqsResource extends JsonResource
     public function toArray($request)
     {
 
-
         return [
             'id' => $this->id,
             'page_id' => $this->id,

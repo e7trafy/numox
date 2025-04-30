@@ -32,7 +32,6 @@ class systemUnitResource extends JsonResource
                 'en' => $this->getTranslation('description', 'en'),
             ],
 
-
             'content' => [
                 'content' => $this->content,
                 'ar' => $this->getTranslation('content', 'ar'),

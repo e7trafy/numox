@@ -47,6 +47,16 @@ Route::group([
         ]);
         /* ------------ end Of dashboard ---------- */
 
+        /* ------------ start Of pages---------- */
+        Route::get('/home-content', [
+            'uses' => 'pagesContentController@home',
+            'as' => 'pages.home',
+            'title' => ' الصفحه الرئيسيه',
+            'group' => 'pages',
+            'status' => 'admin',
+        ]);
+        /* ------------ end Of sectionsContent ---------- */
+
         /* ------------ start Of sectionsContent---------- */
         Route::get('/sections-content', [
             'uses' => 'sectionsContentController@index',
@@ -56,7 +66,24 @@ Route::group([
             'type' => 'parent',
             'status' => 'admin',
         ]);
-        /* ------------ end Of dashboard ---------- */
+        // sectionsContent edit
+        Route::get('sectionsContent/{id}/edit', [
+            'uses' => 'sectionsContentController@edit',
+            'as' => 'sectionsContent.edit',
+            'group' => 'sectionsContent',
+            'status' => 'admin',
+            'title' => 'صفحه تحديث سيكشن',
+        ]);
+
+        // sectionsContent update
+        Route::put('sectionsContent/{id}', [
+            'uses' => 'sectionsContentController@update',
+            'as' => 'sectionsContent.update',
+            'group' => 'sectionsContent',
+            'status' => 'admin',
+            'title' => 'تحديث سيكشن',
+        ]);
+        /* ------------ end Of sectionsContent ---------- */
 
         /* ------------ start Of products---------- */
         Route::get('/products', [
@@ -66,6 +93,59 @@ Route::group([
             'group' => 'products',
             'type' => 'parent',
             'status' => 'admin',
+        ]);
+        // products show
+        Route::get('products/{id}/show', [
+            'uses' => 'productController@show',
+            'as' => 'products.show',
+            'group' => 'products',
+            'status' => 'admin',
+            'title' => 'عرض منتج',
+        ]);
+
+        // products create
+        Route::get('products/create', [
+            'uses' => 'productController@create',
+            'as' => 'products.create',
+            'group' => 'products',
+            'status' => 'admin',
+            'title' => ' صفحة اضافة منتج',
+        ]);
+
+        // products store
+        Route::post('products/store', [
+            'uses' => 'productController@store',
+            'as' => 'products.store',
+            'group' => 'products',
+            'status' => 'admin',
+            'title' => ' اضافة منتج',
+        ]);
+
+        // products update
+        Route::get('products/{id}/edit', [
+            'uses' => 'productController@edit',
+            'as' => 'products.edit',
+            'group' => 'products',
+            'status' => 'admin',
+            'title' => 'صفحه تحديث منتج',
+        ]);
+
+        // products update
+        Route::put('products/{id}', [
+            'uses' => 'productController@update',
+            'as' => 'products.update',
+            'group' => 'products',
+            'status' => 'admin',
+            'title' => 'تحديث منتج',
+        ]);
+
+        // products delete
+        Route::delete('products/{id}', [
+            'uses' => 'productController@destroy',
+            'as' => 'products.delete',
+            'group' => 'products',
+            'status' => 'admin',
+            'title' => 'حذف منتج',
         ]);
         /* ------------ end Of products ---------- */
 

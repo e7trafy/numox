@@ -2,11 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\Client;
 use App\Models\Content;
 use App\Models\Page;
-use App\Models\Partner;
-use App\Models\Review;
 use Illuminate\Database\Seeder;
 
 class aboutUsSeeder extends Seeder
@@ -60,7 +57,7 @@ class aboutUsSeeder extends Seeder
             ],
         ]);
 
-        //Start : رؤيتنا
+        // Start : رؤيتنا
         $content = Content::create([
             'page_id' => Page::aboutUs,
             'name' => [
@@ -85,7 +82,7 @@ class aboutUsSeeder extends Seeder
             ],
         ]);
 
-        //start : ما الذي يميزنا؟
+        // start : ما الذي يميزنا؟
         $content = Content::create([
             'page_id' => Page::aboutUs,
             'name' => [
