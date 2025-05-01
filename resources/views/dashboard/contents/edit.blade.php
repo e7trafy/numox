@@ -1,7 +1,14 @@
 @extends('dashboard.layouts.master')
 
 @push('head')
-
+    <!-- Include CKEditor CDN in the head section -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
+    <!-- Optional: Include CKEditor styles -->
+    <style>
+        .ck-editor__editable_inline {
+            min-height: 200px;
+        }
+    </style>
 @endpush
 
 @section('title')
@@ -39,7 +46,7 @@
                     <div class="live-preview">
                         <form class="row g-3 needs-validation store"
                               action="{{ route('admin.sectionsContent.update', $row->id) }}"
-                              method="POST" novalidate>
+                              method="POST" enctype="multipart/form-data" novalidate>
                             @csrf
                             @method('put')
                             @include('dashboard.contents.form')
@@ -69,4 +76,87 @@
 
     @include('dashboard.layouts.shared.submitAddForm')
 
+    <!-- CKEditor initialization script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize CKEditor for all textarea elements with the 'ckeditor' class
+            const editorElements = document.querySelectorAll('textarea.ckeditor');
+
+            editorElements.forEach(function (element) {
+                ClassicEditor
+                    .create(element, {
+                        // CKEditor configuration options
+                        toolbar: {
+                            items: [
+                                'heading', '|',
+                                'bold', 'italic', 'link', 'bulletedList', 'numberedList', '|',
+                                'outdent', 'indent', '|',
+                                'fontColor', 'fontBackgroundColor', '|',
+                                'blockQuote', 'insertTable', 'mediaEmbed', 'undo', 'redo'
+                            ]
+                        },
+                        language: document.documentElement.lang, // Auto-detect language based on HTML lang attribute
+                        // Color options
+                        fontColor: {
+                            colors: [
+                                {color: '#000000', label: 'Black'},
+                                {color: '#4D4D4D', label: 'Dim grey'},
+                                {color: '#999999', label: 'Grey'},
+                                {color: '#E6E6E6', label: 'Light grey'},
+                                {color: '#FFFFFF', label: 'White'},
+                                {color: '#E64C4C', label: 'Red'},
+                                {color: '#E6994C', label: 'Orange'},
+                                {color: '#E6E64C', label: 'Yellow'},
+                                {color: '#4CE64C', label: 'Green'},
+                                {color: '#4C4CE6', label: 'Blue'},
+                                {color: '#994CE6', label: 'Purple'},
+                                {color: '#E64C99', label: 'Pink'}
+                            ],
+                            columns: 6
+                        },
+                        fontBackgroundColor: {
+                            colors: [
+                                {color: '#000000', label: 'Black'},
+                                {color: '#4D4D4D', label: 'Dim grey'},
+                                {color: '#999999', label: 'Grey'},
+                                {color: '#E6E6E6', label: 'Light grey'},
+                                {color: '#FFFFFF', label: 'White'},
+                                {color: '#E64C4C', label: 'Red'},
+                                {color: '#E6994C', label: 'Orange'},
+                                {color: '#E6E64C', label: 'Yellow'},
+                                {color: '#4CE64C', label: 'Green'},
+                                {color: '#4C4CE6', label: 'Blue'},
+                                {color: '#994CE6', label: 'Purple'},
+                                {color: '#E64C99', label: 'Pink'}
+                            ],
+                            columns: 6
+                        },
+
+                        image: {
+                            toolbar: [
+                                'imageStyle:inline',
+                                'imageStyle:block',
+                                'imageStyle:side',
+                                '|',
+                                'toggleImageCaption',
+                                'imageTextAlternative'
+                            ]
+                        },
+                        table: {
+                            contentToolbar: [
+                                'tableColumn',
+                                'tableRow',
+                                'mergeTableCells'
+                            ]
+                        }
+                    })
+                    .then(editor => {
+                        console.log('CKEditor initialized successfully:', editor);
+                    })
+                    .catch(error => {
+                        console.error('CKEditor initialization failed:', error);
+                    });
+            });
+        });
+    </script>
 @endpush
