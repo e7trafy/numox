@@ -24,8 +24,8 @@ class contentRequest extends FormRequest
             return [
                 'name.*' => 'nullable|max:191',
                 'title.*' => 'nullable|max:191',
-                'description.*' => 'nullable|max:191',
-                'content.*' => 'nullable|max:191',
+                'description.*' => 'nullable',
+                'content.*' => 'nullable',
                 'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'page_id' => 'nullable|exists:pages,id,deleted_at,NULL',
             ];
@@ -33,8 +33,8 @@ class contentRequest extends FormRequest
             return [
                 'name.*' => 'nullable|max:191',
                 'title.*' => 'nullable|max:191',
-                'description.*' => 'nullable|max:191',
-                'content.*' => 'nullable|max:191',
+                'description.*' => 'nullable',
+                'content.*' => 'nullable',
                 'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'page_id' => 'nullable|exists:pages,id,deleted_at,NULL',
             ];

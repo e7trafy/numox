@@ -55,6 +55,27 @@ Route::group([
             'group' => 'pages',
             'status' => 'admin',
         ]);
+        Route::get('/products-content', [
+            'uses' => 'pagesContentController@products',
+            'as' => 'pages.products',
+            'title' => '  المنتجات',
+            'group' => 'pages',
+            'status' => 'admin',
+        ]);
+        Route::get('/partners-content', [
+            'uses' => 'pagesContentController@partners',
+            'as' => 'pages.partners',
+            'title' => '  الشركاء',
+            'group' => 'pages',
+            'status' => 'admin',
+        ]);
+        Route::get('/aboutUs-content', [
+            'uses' => 'pagesContentController@aboutUs',
+            'as' => 'pages.aboutUs',
+            'title' => '  عن الشركه',
+            'group' => 'pages',
+            'status' => 'admin',
+        ]);
         /* ------------ end Of sectionsContent ---------- */
 
         /* ------------ start Of sectionsContent---------- */

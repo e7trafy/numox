@@ -54,6 +54,18 @@
                                 <a href="{{route('admin.pages.home')}}" class="nav-link" data-key="t-home">
                                     {{__('siteTrans.home')}} </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="{{route('admin.pages.products')}}" class="nav-link" data-key="t-products">
+                                    {{__('siteTrans.products')}} </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('admin.pages.partners')}}" class="nav-link" data-key="t-partners">
+                                    {{__('siteTrans.partners')}} </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('admin.pages.aboutUs')}}" class="nav-link" data-key="t-aboutUs">
+                                    {{__('siteTrans.aboutUs')}} </a>
+                            </li>
                         </ul>
                     </div>
                 </li> <!-- end Dashboard Menu -->
