@@ -39,6 +39,7 @@ return [
     'period' => 'الفترة',
 
     'page' => 'الصفحة',
+    'contents' => 'المحتوى',
     'aboutUs' => 'من نحن',
     'pages' => 'الصفحات',
     'action' => 'إجراء',
