@@ -52,6 +52,44 @@
                             @include('dashboard.contents.form')
 
 
+                            <br><br><br>
+
+                            @if($row->features->count() > 0)
+
+                                <div class="card-header align-items-center d-flex">
+                                    <h4 class="card-title mb-0 flex-grow-1">{{__('siteTrans.features')}}</h4>
+                                </div>
+
+                                @foreach($row->features as $feature)
+
+                                    <div class="accordion custom-accordionwithicon-plus"
+                                         id="accordionWithplusicon">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="accordionwithplusExample2">
+                                                <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#{{$feature->id}}"
+                                                        aria-expanded="false"
+                                                        aria-controls="{{$feature->id}}">
+                                                    {{$feature->title}}
+                                                </button>
+                                            </h2>
+                                            <div id="{{$feature->id}}"
+                                                 class="accordion-collapse collapse"
+                                                 aria-labelledby="accordionwithplusExample2"
+                                                 data-bs-parent="#accordionWithplusicon">
+                                                <div class="accordion-body">
+
+                                                    @include('dashboard.contents.features' , ['feature' => $feature])
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                @endforeach
+                            @endif
+
                             <button class="btn btn-success" type="submit">
                                 {{ __('siteTrans.edit') }}
                             </button>

@@ -8,6 +8,15 @@ use App\Models\Page;
 
 class pagesContentController extends Controller
 {
+    /***************** general *****************/
+    public function general(): \Illuminate\Contracts\View\View
+    {
+        $data = [
+            'rows' => Content::wherePageId(Page::general)->with('features')->get(),
+        ];
+        return view('dashboard.pages.home', $data);
+    }
+
     /***************** home *****************/
     public function home(): \Illuminate\Contracts\View\View
     {

@@ -51,6 +51,10 @@
                     <div class="collapse menu-dropdown" id="sidebarDashboards">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
+                                <a href="{{route('admin.pages.general')}}" class="nav-link" data-key="t-general">
+                                    {{__('siteTrans.general')}} </a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="{{route('admin.pages.home')}}" class="nav-link" data-key="t-home">
                                     {{__('siteTrans.home')}} </a>
                             </li>

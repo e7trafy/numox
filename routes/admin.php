@@ -48,6 +48,13 @@ Route::group([
         /* ------------ end Of dashboard ---------- */
 
         /* ------------ start Of pages---------- */
+        Route::get('/general-content', [
+            'uses' => 'pagesContentController@general',
+            'as' => 'pages.general',
+            'title' => ' الصفحات العامه',
+            'group' => 'pages',
+            'status' => 'admin',
+        ]);
         Route::get('/home-content', [
             'uses' => 'pagesContentController@home',
             'as' => 'pages.home',
