@@ -26,7 +26,7 @@ class contentRequest extends FormRequest
                 'title.*' => 'nullable|max:191',
                 'description.*' => 'nullable',
                 'content.*' => 'nullable',
-                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'image' => 'nullable|mimes:jpeg,png,jpg,gif,svg,mp4|max:5400',
                 'page_id' => 'nullable|exists:pages,id,deleted_at,NULL',
             ];
         } else {

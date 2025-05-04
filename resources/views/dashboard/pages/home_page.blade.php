@@ -16,12 +16,8 @@
                     <li class="breadcrumb-item active">Starter</li>
                 </ol>
             </div>
-
-
         </div>
     </div>
-
-
 
     <div class="row">
         <div class="col-xl-6 col-md-6">
@@ -139,3 +135,4 @@
     </div> <!-- end row-->
 
 @endsection
+
