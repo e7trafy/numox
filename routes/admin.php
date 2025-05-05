@@ -242,6 +242,155 @@ Route::group([
         ]);
         /* ------------ end Of partners ---------- */
 
+        /* ------------ start Of reviews ---------- */
+        Route::get('reviews', [
+            'uses' => 'reviewController@index',
+            'as' => 'reviews.index',
+            'title' => 'الاراء',
+            'type' => 'parent',
+            'group' => 'reviews',
+            'status' => 'admin',
+        ]);
+
+        // reviews show
+        Route::get('reviews/{id}/show', [
+            'uses' => 'reviewController@show',
+            'as' => 'reviews.show',
+            'group' => 'reviews',
+            'status' => 'admin',
+            'title' => 'عرض اراء',
+        ]);
+
+        // reviews create
+        Route::get('reviews/create', [
+            'uses' => 'reviewController@create',
+            'as' => 'reviews.create',
+            'group' => 'reviews',
+            'status' => 'admin',
+            'title' => ' صفحة اضافة اراء',
+        ]);
+
+        // reviews store
+        Route::post('reviews/store', [
+            'uses' => 'reviewController@store',
+            'as' => 'reviews.store',
+            'group' => 'reviews',
+            'status' => 'admin',
+            'title' => ' اضافة اراء',
+        ]);
+
+        // reviews update
+        Route::get('reviews/{id}/edit', [
+            'uses' => 'reviewController@edit',
+            'as' => 'reviews.edit',
+            'group' => 'reviews',
+            'status' => 'admin',
+            'title' => 'صفحه تحديث اراء',
+        ]);
+
+        // reviews update
+        Route::put('reviews/{id}', [
+            'uses' => 'reviewController@update',
+            'as' => 'reviews.update',
+            'group' => 'reviews',
+            'status' => 'admin',
+            'title' => 'تحديث اراء',
+        ]);
+
+        // reviews delete
+        Route::delete('reviews/{id}', [
+            'uses' => 'reviewController@destroy',
+            'as' => 'reviews.delete',
+            'group' => 'reviews',
+            'status' => 'admin',
+            'title' => 'حذف اراء',
+        ]);
+        /* ------------ end Of reviews ---------- */
+
+        /* ------------ start Of clients ---------- */
+        Route::get('clients', [
+            'uses' => 'clientController@index',
+            'as' => 'clients.index',
+            'title' => 'العملاء',
+            'type' => 'parent',
+            'group' => 'clients',
+            'status' => 'admin',
+        ]);
+
+        // clients show
+        Route::get('clients/{id}/show', [
+            'uses' => 'clientController@show',
+            'as' => 'clients.show',
+            'group' => 'clients',
+            'status' => 'admin',
+            'title' => 'عرض عميل',
+        ]);
+
+        // clients create
+        Route::get('clients/create', [
+            'uses' => 'clientController@create',
+            'as' => 'clients.create',
+            'group' => 'clients',
+            'status' => 'admin',
+            'title' => ' صفحة اضافة عميل',
+        ]);
+
+        // clients store
+        Route::post('clients/store', [
+            'uses' => 'clientController@store',
+            'as' => 'clients.store',
+            'group' => 'clients',
+            'status' => 'admin',
+            'title' => ' اضافة عميل',
+        ]);
+
+        // clients update
+        Route::get('clients/{id}/edit', [
+            'uses' => 'clientController@edit',
+            'as' => 'clients.edit',
+            'group' => 'clients',
+            'status' => 'admin',
+            'title' => 'صفحه تحديث عميل',
+        ]);
+
+        // clients update
+        Route::put('clients/{id}', [
+            'uses' => 'clientController@update',
+            'as' => 'clients.update',
+            'group' => 'clients',
+            'status' => 'admin',
+            'title' => 'تحديث عميل',
+        ]);
+
+        // clients delete
+        Route::delete('clients/{id}', [
+            'uses' => 'clientController@destroy',
+            'as' => 'clients.delete',
+            'group' => 'clients',
+            'status' => 'admin',
+            'title' => 'حذف عميل',
+        ]);
+        /* ------------ end Of clients ---------- */
+
+        /*------------ start Of settings ----------*/
+        Route::get('settings', [
+            'uses' => 'settingController@index',
+            'as' => 'settings.index',
+            'title' => 'الاعدادات',
+            'type' => 'parent',
+            'group' => 'settings',
+            'status' => 'admin',
+        ]);
+        // settings update
+        Route::post('settings/update', [
+            'uses' => 'settingController@update',
+            'as' => 'settings.update',
+            'group' => 'settings',
+            'status' => 'admin',
+            'title' => '  تعديل الاعدادات',
+        ]);
+        /*------------ end Of settings ----------*/
+
         /* ------------ start Of pricing ---------- */
         Route::get('pricing', [
             'uses' => 'pricingController@index',

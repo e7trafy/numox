@@ -90,6 +90,22 @@
                     </a>
                 </li>
 
+                <!---------------- // clients // ---------------->
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{route('admin.clients.index')}}">
+                        <i class="ri-honour-line"></i> <span
+                            data-key="t-widgets"> {{__('siteTrans.clients')}} </span>
+                    </a>
+                </li>
+
+                <!---------------- // reviews // ---------------->
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{route('admin.reviews.index')}}">
+                        <i class="ri-honour-line"></i> <span
+                            data-key="t-widgets"> {{__('siteTrans.reviews')}} </span>
+                    </a>
+                </li>
+
                 <!---------------- // pricing // ---------------->
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="{{route('admin.pricing.index')}}">
@@ -103,6 +119,14 @@
                     <a class="nav-link menu-link" href="{{route('admin.sources.index')}}">
                         <i class="ri-honour-line"></i> <span
                             data-key="t-widgets"> {{__('siteTrans.sources')}} </span>
+                    </a>
+                </li>
+
+                <!---------------- // settings // ---------------->
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{route('admin.settings.index')}}">
+                        <i class="ri-honour-line"></i> <span
+                            data-key="t-widgets"> {{__('siteTrans.settings')}} </span>
                     </a>
                 </li>
 

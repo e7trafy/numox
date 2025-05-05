@@ -56,6 +56,7 @@ class generalSeeder extends Seeder
 
         // Start: Reviews
         Review::create([
+            'page_id' => Page::general,
             'reviewer_name' => 'ا.د/ ابراهيم محمد الخليفى',
             'reviewer_description' => 'رئيس مجلس اداره شركه حلول للتقنيه',
             'review' => [
@@ -82,6 +83,7 @@ class generalSeeder extends Seeder
         ];
         foreach ($name_ar as $key => $value) {
             Client::create([
+                'page_id' => Page::general,
                 'name' => [
                     'ar' => $value,
                     'en' => $name_en[$key],
@@ -90,7 +92,7 @@ class generalSeeder extends Seeder
                     'ar' => $value,
                     'en' => $name_en[$key],
                 ],
-                'image' => $name_en_img[$key].'.png',
+                'image' => $name_en_img[$key] . '.png',
             ]);
         }
 
@@ -118,7 +120,7 @@ class generalSeeder extends Seeder
                     'ar' => $value,
                     'en' => $name_en[$key],
                 ],
-                'image' => $name_en_imgs[$key].'.png',
+                'image' => $name_en_imgs[$key] . '.png',
             ]);
         }
 
