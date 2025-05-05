@@ -65,7 +65,7 @@
                                     </div>
                                 </th>
                                 <td>{{$row->id}}</td>
-                                <td>{{$row->page->slug}}</td>
+                                <td>{{ $row->page?->slug ?? 'عامه' }}</td>
                                 <td>{{$row->reviewer_name}}</td>
                                 <td>
                                     <a href="{{ route('admin.reviews.edit', $row->id) }}"
