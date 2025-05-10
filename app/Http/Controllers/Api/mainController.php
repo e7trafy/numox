@@ -12,6 +12,7 @@ use App\Http\Resources\site\pages\productsPageResource;
 use App\Http\Resources\site\pages\sourcePageResource;
 use App\Models\contactUs;
 use App\Models\Page;
+use App\Models\Setting;
 
 class mainController extends Controller
 {
@@ -66,6 +67,26 @@ class mainController extends Controller
         $page = Page::whereSlug('aboutUs')->first();
         $data = new aboutUsPageResource($page);
 
+        return response()->json(successReturnData($data));
+    }
+
+    /************ // termsPage // **************/
+    public function termsPage(): \Illuminate\Http\JsonResponse
+    {
+        $terms = Setting::whereIn('key', ['TERMS_' . app()->getLocale()])->first()->value;
+        $data = [
+            'terms_conditions' => $terms,
+        ];
+        return response()->json(successReturnData($data));
+    }
+
+    /************ // privacyPage // **************/
+    public function privacyPage(): \Illuminate\Http\JsonResponse
+    {
+        $terms = Setting::whereIn('key', ['PRIVACY_POLICY_' . app()->getLocale()])->first()->value;
+        $data = [
+            'privacy' => $terms,
+        ];
         return response()->json(successReturnData($data));
     }
 

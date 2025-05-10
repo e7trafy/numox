@@ -96,6 +96,52 @@
     </div>
 </div>
 
+<!------- TERMS_AR & TERMS_EN ----->
+<div class="row">
+    <div class="col-md-6">
+        <div class="mb-3">
+            <label class="form-label">
+                {{__('siteTrans.TERMS_AR')}} </label>
+            <textarea class="form-control input-air-primary" name="TERMS_AR" rows="5">
+        {{ $row['TERMS_AR']}}
+        </textarea>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="mb-3">
+            <label class="form-label">
+                {{__('siteTrans.TERMS_EN')}} </label>
+            <textarea class="form-control input-air-primary" name="TERMS_EN" rows="5">
+        {{ $row['TERMS_EN']}}
+        </textarea>
+        </div>
+    </div>
+</div>
+
+<!------- PRIVACY_POLICY_AR & PRIVACY_POLICY_EN ----->
+<div class="row">
+    <div class="col-md-6">
+        <div class="mb-3">
+            <label class="form-label">
+                {{__('siteTrans.PRIVACY_POLICY_AR')}} </label>
+            <textarea class="form-control input-air-primary" name="PRIVACY_POLICY_AR"
+                      rows="5">
+        {{ $row['PRIVACY_POLICY_AR']}}
+        </textarea>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="mb-3">
+            <label class="form-label">
+                {{__('siteTrans.PRIVACY_POLICY_EN')}} </label>
+            <textarea class="form-control input-air-primary" name="PRIVACY_POLICY_EN"
+                      rows="5">
+        {{ $row['PRIVACY_POLICY_EN']}}
+        </textarea>
+        </div>
+    </div>
+</div>
+
 <!------- address----->
 <div class="col-md-12">
     <div class="mb-3">

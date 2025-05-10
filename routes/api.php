@@ -16,6 +16,12 @@ Route::group(['middleware' => ['api-lang'], 'namespace' => 'App\Http\Controllers
 
     Route::get('aboutUsPage', 'mainController@aboutUsPage');
 
+    Route::get('termsPage', 'mainController@termsPage');
+
+    Route::get('privacyPage', 'mainController@privacyPage');
+
+    Route::get('fqsPage', 'mainController@fqsPage');
+
     Route::get('settings', 'mainController@settings');
 
     Route::post('sendContactUs', 'mainController@sendContactUs');

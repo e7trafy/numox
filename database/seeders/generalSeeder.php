@@ -16,7 +16,7 @@ class generalSeeder extends Seeder
 
         // Numbers
         $content = Content::create([
-            'page_id' => 1,
+            'page_id' => Page::general,
             'name' => [
                 'ar' => 'أرقام نومو إديو إكس',
                 'en' => 'Nomo Edu X Numbers',
@@ -55,16 +55,33 @@ class generalSeeder extends Seeder
         }
 
         // Start: Reviews
-        Review::create([
-            'page_id' => Page::general,
-            'reviewer_name' => 'ا.د/ ابراهيم محمد الخليفى',
-            'reviewer_description' => 'رئيس مجلس اداره شركه حلول للتقنيه',
-            'review' => [
-                'ar' => 'موظفون ودودون للغاية، وتواصل غير معقد وتنظيم احترافي. ملتزم جدًا بالمشاكل بجميع أنواعها. موظفون ودودون للغاية، وتواصل غير معقد وتنظيم احترافي. ملتزم جدًا بالمشاكل بجميع أنواعها. موظفون ودودون للغاية، وتواصل غير معقد وتنظيم احترافي.',
-                'en' => 'Extremely friendly staff, straightforward communication, and professional organization. Highly committed to solving all kinds of problems. Extremely friendly staff, straightforward communication, and professional organization.
-                Highly committed to solving all kinds of problems. Extremely friendly staff, straightforward communication, and professional organization.',
+        $reviews = [
+            [
+                'reviewer_name' => 'ا.د/ ابراهيم محمد الخليفى',
+                'reviewer_description' => 'رئيس مجلس اداره شركه حلول للتقنيه',
+                'review' => [
+                    'ar' => 'موظفون ودودون للغاية، وتواصل غير معقد وتنظيم احترافي. ملتزم جدًا بالمشاكل بجميع أنواعها.',
+                    'en' => 'Extremely friendly staff, straightforward communication, and professional organization. Highly committed to solving all kinds of problems.'
+                ]
             ],
-        ]);
+            [
+                'reviewer_name' => 'محمد الحربي',
+                'reviewer_description' => 'متدرب',
+                'review' => [
+                    'ar' => 'كانت تجربة مميزة ومثرية، واكتسبت مهارات عملية ساعدتني في تطوير أدائي بشكل ملموس.',
+                    'en' => 'It was a distinctive and enriching experience, and I gained practical skills that helped me tangibly develop my performance.'
+                ]
+            ]
+        ];
+
+        foreach ($reviews as $review) {
+            Review::create([
+                'page_id' => Page::general,
+                'reviewer_name' => $review['reviewer_name'],
+                'reviewer_description' => $review['reviewer_description'],
+                'review' => $review['review']
+            ]);
+        }
 
         // Start: Clients
         $name_ar = [
@@ -111,7 +128,7 @@ class generalSeeder extends Seeder
 
         foreach ($name_ar as $key => $value) {
             Partner::create([
-                'page_id' => 1,
+                'page_id' => Page::general,
                 'name' => [
                     'ar' => $value,
                     'en' => $name_en[$key],

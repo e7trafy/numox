@@ -22,6 +22,12 @@ return [
     'enter' => 'Enter ',
     'company' => 'Company',
     'client_phone' => 'Phone',
+    'privacy' => 'سياسه الخصوصية',
+    'terms' => 'الشروط والأحكام',
+    'TERMS_AR' => 'الشروط والأحكام بالعربية',
+    'TERMS_EN' => 'Terms & Conditions',
+    'PRIVACY_POLICY_AR' => 'سياسة الخصوصية بالعربية',
+    'PRIVACY_POLICY_EN' => 'Privacy Policy',
 
     'create' => 'Create',
     'add' => 'Add',

@@ -372,6 +372,71 @@ Route::group([
         ]);
         /* ------------ end Of clients ---------- */
 
+        /* ------------ start Of fqs ---------- */
+        Route::get('fqs', [
+            'uses' => 'clientController@index',
+            'as' => 'fqs.index',
+            'title' => 'الاسئله المتكرره',
+            'type' => 'parent',
+            'group' => 'fqs',
+            'status' => 'admin',
+        ]);
+
+        // fqs show
+        Route::get('fqs/{id}/show', [
+            'uses' => 'fqsController@show',
+            'as' => 'fqs.show',
+            'group' => 'fqs',
+            'status' => 'admin',
+            'title' => 'عرض الاسئله المتكرره',
+        ]);
+
+        // fqs create
+        Route::get('fqs/create', [
+            'uses' => 'fqsController@create',
+            'as' => 'fqs.create',
+            'group' => 'fqs',
+            'status' => 'admin',
+            'title' => ' صفحة اضافة الاسئله المتكرره',
+        ]);
+
+        // fqs store
+        Route::post('fqs/store', [
+            'uses' => 'fqsController@store',
+            'as' => 'fqs.store',
+            'group' => 'fqs',
+            'status' => 'admin',
+            'title' => ' اضافة الاسئله المتكرره',
+        ]);
+
+        // fqs update
+        Route::get('fqs/{id}/edit', [
+            'uses' => 'fqsController@edit',
+            'as' => 'fqs.edit',
+            'group' => 'fqs',
+            'status' => 'admin',
+            'title' => 'صفحه تحديث الاسئله المتكرره',
+        ]);
+
+        // fqs update
+        Route::put('fqs/{id}', [
+            'uses' => 'fqsController@update',
+            'as' => 'fqs.update',
+            'group' => 'fqs',
+            'status' => 'admin',
+            'title' => 'تحديث الاسئله المتكرره',
+        ]);
+
+        // fqs delete
+        Route::delete('fqs/{id}', [
+            'uses' => 'fqsController@destroy',
+            'as' => 'fqs.delete',
+            'group' => 'fqs',
+            'status' => 'admin',
+            'title' => 'حذف الاسئله المتكرره',
+        ]);
+        /* ------------ end Of fqs ---------- */
+
         /*------------ start Of settings ----------*/
         Route::get('settings', [
             'uses' => 'settingController@index',
