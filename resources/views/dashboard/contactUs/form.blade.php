@@ -41,10 +41,30 @@
 </div>
 <div class="col-md-3">
     <div class="mb-1">
+        <label for="client_phone_dial_code" class="form-label">{{__('siteTrans.client_phone_dial_code')}}</label>
+        <input type="text" class="form-control" id="client_phone_dial_code"
+               placeholder="{{__('siteTrans.enter')}}{{__('siteTrans.client_phone_dial_code')}}"
+               value="{{isset($row) ? $row->client_phone_dial_code : old('client_phone_dial_code')}}"
+               required>
+        @include('dashboard.layouts.shared.validationStatus')
+    </div>
+</div>
+<div class="col-md-3">
+    <div class="mb-1">
         <label for="company" class="form-label">{{__('siteTrans.company')}}</label>
         <input type="text" class="form-control" id="company"
                placeholder="{{__('siteTrans.enter')}}{{__('siteTrans.company')}}"
                value="{{isset($row) ? $row->company : old('company')}}"
+               required>
+        @include('dashboard.layouts.shared.validationStatus')
+    </div>
+</div>
+<div class="col-md-3">
+    <div class="mb-1">
+        <label for="entity" class="form-label">{{__('siteTrans.entity')}}</label>
+        <input type="text" class="form-control" id="entity"
+               placeholder="{{__('siteTrans.enter')}}{{__('siteTrans.entity')}}"
+               value="{{isset($row) ? $row->entity : old('entity')}}"
                required>
         @include('dashboard.layouts.shared.validationStatus')
     </div>

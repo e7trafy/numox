@@ -21,6 +21,8 @@ return [
     'action' => 'Action',
     'enter' => 'Enter ',
     'company' => 'Company',
+    'entity' => 'Entity',
+    'client_phone_dial_code' => 'Dial Code',
     'client_phone' => 'Phone',
     'privacy' => 'سياسه الخصوصية',
     'terms' => 'الشروط والأحكام',

@@ -52,6 +52,7 @@
                             <th>{{__('siteTrans.client_name')}} </th>
                             <th>{{__('siteTrans.client_email')}}</th>
                             <th>{{__('siteTrans.city')}}</th>
+                            <th>{{__('siteTrans.entity')}}</th>
                             <th>{{__('siteTrans.client_phone')}}</th>
                             <th>{{__('siteTrans.status')}}</th>
                             <th>{{__('siteTrans.type')}}</th>
@@ -72,7 +73,8 @@
                                 <td>{{$row->client_name}}</td>
                                 <td>{{$row->client_email}}</td>
                                 <td>{{$row->city}}</td>
-                                <td>{{$row->client_phone}}</td>
+                                <td>{{$row->entity}}</td>
+                                <td>{{ $row->client_phone_dial_code ? '+' . $row->client_phone_dial_code . ' ' : '' }}{{$row->client_phone}}</td>
                                 <td>{{$row->status}}</td>
                                 <td>{{$row->type}}</td>
                                 <td>{{$row->created_at}}</td>
